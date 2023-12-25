@@ -1,4 +1,8 @@
-/* way to add custom properties  to the CSS*/
+/* way to add custom properties  to the CSS
+In CSS, :root is a pseudo-class that represents the highest-level parent 
+element in the document hierarchy, which is typically the <html> element. 
+It is commonly used to define global CSS variables or custom properties.
+*/
 :root{
     --line-border-fill: #3498db;
     --line-border-empty: #999;
@@ -42,7 +46,7 @@ body{
     transition: .4s ease;
 }
 .progress{
-    background-color: #3498db;
+    background-color: var(--line-border-fill);
     position: absolute;
     top: 50%;
     left: 0;
