@@ -19,12 +19,12 @@ import logo from './XY-removebg-preview.png'
 function Sidenav() {
 
 
-    const navigate = useNavigate(); // Define navigate inside the component
+    const navigate = useNavigate(); 
 
     function handleLogout() {
         console.log('User logged out!');
-        localStorage.removeItem('userToken'); // Example: removing user token
-        navigate('/login'); // Use useNavigate hook to redirect
+        localStorage.removeItem('userToken'); 
+        navigate('/login'); 
     }
   return (
     <div className='sidenav'>

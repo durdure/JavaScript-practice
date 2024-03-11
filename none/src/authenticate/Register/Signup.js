@@ -27,7 +27,9 @@ function Signup() {
       });
   };
   return (
-    <div className="signup">
+
+    <div className="main"> 
+     <div className="signup">
       <img
         src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
         alt=""
@@ -52,6 +54,8 @@ function Signup() {
       />
       <button onClick={handleSignUp}>Sign up</button>
     </div>
+    </div>
+   
   );
 }
 
