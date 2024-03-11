@@ -10,10 +10,22 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 import logo from './XY-removebg-preview.png'
 
+
 function Sidenav() {
+
+
+    const navigate = useNavigate(); // Define navigate inside the component
+
+    function handleLogout() {
+        console.log('User logged out!');
+        localStorage.removeItem('userToken'); // Example: removing user token
+        navigate('/login'); // Use useNavigate hook to redirect
+    }
   return (
     <div className='sidenav'>
        <img className='sidenav__logo' src={logo} alt='logo' />
@@ -55,6 +67,10 @@ function Sidenav() {
             </button>
 
         </div>
+        <button className='sidenav__button' onClick={handleLogout}>
+          <LogoutIcon /> {/* Assuming you have a LogoutIcon component */}
+          <span>Logout</span>
+        </button>
         <div className='sidenav__more'>
             <button className='sidenav__button'>
                 <MenuIcon />

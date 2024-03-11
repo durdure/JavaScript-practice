@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../../src/firebase";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -16,11 +16,11 @@ function Signup() {
     event.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((authUser) => {
-        signInWithEmailAndPassword(auth, email, password).then(
           updateProfile(auth.currentUser, {
             displayName: username,
+          }).then(() => {
+            window.location.href = "/login";
           })
-        );
       })
       .catch((err) => {
         alert(err);

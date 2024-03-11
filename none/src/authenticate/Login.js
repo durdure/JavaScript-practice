@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { auth } from "../firebase";
+import { auth } from "../../src/firebase";
 import "./Login.css";
 
 function Login() {
@@ -8,7 +8,11 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password).then((authUser) => {
+      window.location.href = "/home";
+    }).catch((error) => {
+      alert("Incorrect email or password. Please try again.");
+    });
   };
   return (
     <div className="login">
