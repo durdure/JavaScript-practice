@@ -13,7 +13,7 @@ import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-import logo from './XY-removebg-preview.png'
+import logo from './cancel.png'
 
 
 function Sidenav() {
@@ -51,10 +51,6 @@ function Sidenav() {
                 <span>Slideshow</span>    
             </button>
 
-            <button className='sidenav__button'>
-                <ChatIcon />
-                <span>Chat</span>
-            </button>
 
             <button className='sidenav__button'>
                 <FavoriteBorderIcon />
@@ -68,7 +64,7 @@ function Sidenav() {
 
         </div>
         <button className='sidenav__button' onClick={handleLogout}>
-          <LogoutIcon /> {/* Assuming you have a LogoutIcon component */}
+          <LogoutIcon />
           <span>Logout</span>
         </button>
         <div className='sidenav__more'>
